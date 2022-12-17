@@ -6,19 +6,17 @@ import java.sql.SQLException;
 
 public class DbUtil {
 	public static Connection provideConnection() {
-		
+		Connection conn = null;
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
-			
 		}
 		
-		String url = "jdbc:mysql://localhost:3306/db1";
-		Connection conn = null;
+		String url = "jdbc:mysql://localhost:3306/hrms";
+		
 		try {
-			conn = DriverManager.getConnection(url, "root", "nandi@278961");
+			conn = DriverManager.getConnection(url, "root", "Nandi@278961");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			System.out.println(e.getMessage());
