@@ -1,21 +1,25 @@
 package com.masai.application;
 
 import java.sql.SQLException;
+
 import java.util.Scanner;
 
 public class Main {
 	
 	public static final String ANSI_YELLOW = "\u001B[33m";
 	public static final String ANSI_RESET = "\u001B[0m";
+	public static final String ANSI_RED = "\u001B[31m";
+
 	
 	public static void main(String[] args) throws SQLException{
 		
 		Scanner sc= new Scanner(System.in);
+		
 		System.out.println(ANSI_YELLOW  +  "             Welcome To Human Resource Management            "  + ANSI_RESET);
-		System.out.println(ANSI_YELLOW  +  "================================================="  + ANSI_RESET);
+		System.out.println(ANSI_YELLOW  +  "▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀"  + ANSI_RESET);
 		System.out.println();
-		System.out.println("-------Please Choose Options--------");
-		System.out.println("--------------------------------------");
+		System.out.println(ANSI_YELLOW  +  "-------Please Choose Options--------"  + ANSI_RESET);
+		System.out.println(ANSI_RED  + "************************************************"  + ANSI_RESET);
 		
 		System.out.println("Press 1 for Login As Admin");
 		System.out.println();

@@ -3,18 +3,21 @@ package com.masai.application;
 import java.sql.SQLException;
 import java.util.Scanner;
 import com.masai.useCase.AddDepartmentUsecase;
+import com.masai.useCase.UpdateDepartments;
+import com.masai.useCase.ViewAllDepartmentUseCase;
 
 public class AdminLink {
+	
+	public static final String ANSI_RED = "\u001B[31m";
+	public static final String ANSI_RESET = "\u001B[0m";
 	
 	static boolean	ordering=true;
 	
 	public  static void linkingAdmin() throws SQLException {
-		
-		
 		Scanner sc=new Scanner(System.in);
 		do {
-			System.out.println("Hello Welcome Admin :-> Nandita Singh");
-			System.out.println();
+			System.out.println(ANSI_RED +   " ***Welcome  To   My   Admin   Panel***");
+			System.out.println( "===================================" + ANSI_RESET);
 			System.out.println();
 			
 			System.out.println("Press 1. For Adding New Departments");
@@ -35,15 +38,28 @@ public class AdminLink {
 			
 			int choice = sc.nextInt();
 			
+			//---------------------------------------------Options  To Choose--------------------------------------
 			switch (choice) {
-			case 1: {
-				System.out.println();
-				AddDepartmentUsecase.register();
-				break;
+					case 1: {
+							System.out.println();
+							AddDepartmentUsecase.register();
+							break;
+					}
+					case 2: {
+							System.out.println();
+							ViewAllDepartmentUseCase.main(null);
+							break;
+					}
+					case 3: {
+							System.out.println();
+							UpdateDepartments.main(null);
+							break;
+					}
+					default:
+							throw new IllegalArgumentException("Unexpected value: " + choice);
 			}
-			default:
-				throw new IllegalArgumentException("Unexpected value: " + choice);
-			}
+			
+			
 			}while(ordering);
 	}
 	
