@@ -4,6 +4,9 @@ import java.sql.SQLException;
 
 import java.util.Scanner;
 
+import com.masai.exception.EmployeeException;
+import com.masai.useCase.LoginEmployee;
+
 public class Main {
 	
 	public static final String ANSI_YELLOW = "\u001B[33m";
@@ -32,34 +35,42 @@ public class Main {
 		
 		int choice =sc.nextInt();
 		
+//----------------------------------Choose  Options  Results----------------------------------------
 		switch (choice) {
-		
-		case 1: {
-				System.out.println("Enter Admin Username : ");
-				String username=sc.next();
-				
-				System.out.println("Enter Admin Password : ");
-				String pass = sc.next();
-				
-				if(username.equals("admin") && pass.equals("123")) {
-					AdminLink.linkingAdmin();
-				}
-					else  {
-					System.out.println("Wrong Username And PassWord");
+			case 1: {
+					System.out.println("Enter Admin Username : ");
+					String username=sc.next();
+					
+					System.out.println("Enter Admin Password : ");
+					String pass = sc.next();
+					
+					if(username.equals("admin") && pass.equals("123")) {
+						AdminLink.linkingAdmin();
 					}
-				break;
-			}
-	//		case 2:{
-	//			loginEmployee.loginEmployee();
-	//			break;
-				
-	//		}
-			case 3:{
-				System.out.println("   Application  Closed");
-				System.out.println("     Thank  You");
-				System.out.println("-------------------------");
-				break;
-			}
+						else  {
+						System.out.println("Wrong Username And PassWord");
+						}
+					break;
+				}
+				case 2:{
+					try {
+						LoginEmployee.loginEmployee();
+					} catch (EmployeeException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} catch (SQLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					break;
+					
+				}
+				case 3:{
+					System.out.println("   Application  Closed");
+					System.out.println("     Thank  You");
+					System.out.println("-------------------------");
+					break;
+				}
 				
 				default:
 					throw new IllegalArgumentException("Unexpected value: " + choice);
