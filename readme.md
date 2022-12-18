@@ -27,7 +27,7 @@
     <h3>Language used</h3>
     <hr>
     <ol>
-        <li>Employee Management</li>
+        <li>JAVA</li>
     </ol>
 
 
