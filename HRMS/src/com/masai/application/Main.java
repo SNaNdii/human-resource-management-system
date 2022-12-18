@@ -21,11 +21,11 @@ public class Main {
 		System.out.println(ANSI_YELLOW  +  "-------Please Choose Options--------"  + ANSI_RESET);
 		System.out.println(ANSI_RED  + "************************************************"  + ANSI_RESET);
 		
-		System.out.println("Press 1 for Login As Admin");
+		System.out.println("Press 1 --->  for Login As Admin");
 		System.out.println();
-		System.out.println("Press 2 for login As Employee");
+		System.out.println("Press 2 ---> for login As Employee");
 		System.out.println();
-		System.out.println("Press 3 for Exit");
+		System.out.println("Press 3 ---> for Exit");
 		
 		System.out.println();
 		System.out.println();

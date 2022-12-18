@@ -6,7 +6,7 @@ import com.masai.dao.DepartmentDao;
 import com.masai.dao.DepartmentDaoImp;
 
 
-public class UpdateDepartments {
+public class UpdateDepartmentUsecase {
 
 		public static void main(String[] args) {
 				
