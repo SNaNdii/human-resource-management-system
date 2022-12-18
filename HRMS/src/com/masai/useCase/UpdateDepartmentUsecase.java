@@ -12,11 +12,11 @@ public class UpdateDepartmentUsecase {
 				
 				Scanner sc = new Scanner(System.in);
 				
-				System.out.println("Enter Department Name : ");
-				String dname=sc.next();
-				
 				System.out.println("Enter Department DId : ");
 				int did=sc.nextInt();
+				
+				System.out.println("Enter Department Name : ");
+				String dname=sc.next();
 				
 				DepartmentDao dao=new DepartmentDaoImp();
 				

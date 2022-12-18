@@ -3,6 +3,7 @@ package com.masai.application;
 import java.sql.SQLException;
 import java.util.Scanner;
 import com.masai.useCase.AddDepartmentUsecase;
+import com.masai.useCase.AddEmployeeUserCase;
 import com.masai.useCase.UpdateDepartmentUsecase;
 import com.masai.useCase.ViewAllDepartmentUseCase;
 
@@ -11,7 +12,7 @@ public class AdminLink {
 	public static final String ANSI_RED = "\u001B[31m";
 	public static final String ANSI_RESET = "\u001B[0m";
 	
-//	static boolean	ordering=true;
+	static boolean	ordering=true;
 	
 	public  static void linkingAdmin() throws SQLException {
 		Scanner sc=new Scanner(System.in);
@@ -34,6 +35,7 @@ public class AdminLink {
 			System.out.println();
 			System.out.println("Press 7 ---> Reject Leaves Of Employees");
 			System.out.println();
+			do {
 			System.out.println("Press 8 ---> For Exit ");
 			
 			int choice = sc.nextInt();
@@ -55,12 +57,27 @@ public class AdminLink {
 							UpdateDepartmentUsecase.main(null);
 							break;
 					}
+					case 4: {
+						System.out.println();
+						AddEmployeeUserCase.main(null);
+						break;
+					}
+					
+					case 8: {
+						System.out.println();
+						System.out.println("   Application  Closed");
+						System.out.println("     Home  Page");
+						System.out.println("-------------------------");
+						Main.main(null);
+						ordering=false;
+						break;
+					}
 					default:
 							throw new IllegalArgumentException("Unexpected value: " + choice);
 			}
 			
 			
-//			}while(ordering);
+			}while(ordering);
 	}
 	
 }

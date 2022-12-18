@@ -48,7 +48,18 @@ public class Main {
 					System.out.println("Wrong Username And PassWord");
 					}
 				break;
-		}
+			}
+	//		case 2:{
+	//			loginEmployee.loginEmployee();
+	//			break;
+				
+	//		}
+			case 3:{
+				System.out.println("   Application  Closed");
+				System.out.println("     Thank  You");
+				System.out.println("-------------------------");
+				break;
+			}
 				
 				default:
 					throw new IllegalArgumentException("Unexpected value: " + choice);

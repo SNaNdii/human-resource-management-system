@@ -12,6 +12,13 @@ public class Employee {
 		
 	}
 	
+public Employee(String ename, String username, String ePassword, int edid) {
+		
+		EmplName = ename;
+		EmplUserName = username;
+		EmplPassword = ePassword;
+		Edid = edid;
+	}
 	public Employee(int eid, String ename, String username, String ePassword, int edid) {
 			
 			EId = eid;
@@ -20,7 +27,6 @@ public class Employee {
 			EmplPassword = ePassword;
 			Edid = edid;
 		}
-	
 	
 	public int getEmplId() {
 		return EId;
