@@ -4,31 +4,49 @@ import java.sql.SQLException;
 
 import java.util.Scanner;
 
+import com.masai.bean.Employee;
+import com.masai.colors.ColorsFile;
 import com.masai.exception.EmployeeException;
 import com.masai.useCase.LoginEmployee;
 
 public class Main {
 	
-	public static final String ANSI_YELLOW = "\u001B[33m";
 	public static final String ANSI_RESET = "\u001B[0m";
-	public static final String ANSI_RED = "\u001B[31m";
 
 	
 	public static void main(String[] args) throws SQLException{
 		
 		Scanner sc= new Scanner(System.in);
-		
-		System.out.println(ANSI_YELLOW  +  "             Welcome To Human Resource Management            "  + ANSI_RESET);
-		System.out.println(ANSI_YELLOW  +  "▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀"  + ANSI_RESET);
+		try {
+		System.out.print(ColorsFile.PURPLE_BOLD  +  "             WELCOME  ");
+		Thread.sleep(300);
+		System.out.print( "TO  ");
+		Thread.sleep(300);
+		System.out.print("HUMAN  ");
+		Thread.sleep(300);
+		System.out.print("RESOURCE  ");
+		Thread.sleep(300);
+		System.out.println("MANAGEMENT  "  + ANSI_RESET);
+		Thread.sleep(300);
+		System.out.println(ColorsFile.ANSI_BLUE +  "        ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀" );
+		Thread.sleep(300);
 		System.out.println();
-		System.out.println(ANSI_YELLOW  +  "-------Please Choose Options--------"  + ANSI_RESET);
-		System.out.println(ANSI_RED  + "************************************************"  + ANSI_RESET);
+		System.out.println("************************************************************");
+		Thread.sleep(300);
+		System.out.println(ColorsFile.RED_ITALIC  +  "               Please Choose Options               "  + ANSI_RESET);
+		Thread.sleep(300);
 		
-		System.out.println("Press 1 --->  for Login As Admin");
+		System.out.println(ColorsFile.CYAN_BOLD + "Press 1 --->  for Login As Admin");
+		Thread.sleep(300);
 		System.out.println();
 		System.out.println("Press 2 ---> for login As Employee");
+		Thread.sleep(300);
 		System.out.println();
-		System.out.println("Press 3 ---> for Exit");
+		System.out.println("Press 3 ---> for Exit" + ANSI_RESET);
+		}catch (InterruptedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		
 		System.out.println();
 		System.out.println();
@@ -54,7 +72,8 @@ public class Main {
 				}
 				case 2:{
 					try {
-						LoginEmployee.loginEmployee();
+						Employee emp=LoginEmployee.loginEmployee();
+						EmployeeLink.linkingEmployeeMethod(emp);
 					} catch (EmployeeException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
@@ -66,14 +85,23 @@ public class Main {
 					
 				}
 				case 3:{
-					System.out.println("   Application  Closed");
+					System.out.println(ColorsFile.ANSI_CYAN+ "   Application  Closed");
 					System.out.println("     Thank  You");
-					System.out.println("-------------------------");
+					System.out.println("-------------------------" + ANSI_RESET);
 					break;
 				}
 				
 				default:
-					throw new IllegalArgumentException("Unexpected value: " + choice);
+					
+					try {
+						System.out.println("Invalid  key");
+						Thread.sleep(200);
+						System.out.println("Please choose a valid key");
+						Thread.sleep(400);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 		}
 	}
 }

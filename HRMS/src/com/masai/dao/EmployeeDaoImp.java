@@ -91,4 +91,55 @@ public class EmployeeDaoImp implements EmployeeDao {
 		return employee;
 	}
 
+	//---------------------------------UPDATE   EMPLOYEE   PROFILE----------------------------------------------------	
+	@Override
+	public String updateEmployee(String username,String password, int Eid) {
+		String message="Employee Not found !...";
+		
+		try(Connection conn= DbUtil.provideConnection()) {
+			PreparedStatement ps=conn.prepareStatement("update Employee set EmplUserName=?, EmplPassword=? where Eid=?");
+		
+			ps.setString(1, username);
+			ps.setString(2, password);
+			ps.setInt(3, Eid);
+			
+			int x=ps.executeUpdate();
+			
+			if(x>0) {
+				message="Employee update";
+			}
+		} catch (SQLException e) {
+			message=e.getMessage();
+		}
+		
+		return message;
+	}
+
+//---------------------------------CHANGE   PASSWORD---------------------------------------------------	
+	@Override
+	public String changePassword(int Eid, String Password) {
+		String message="Oops!... Your Password Cannot Be Change";
+		
+		Employee employee =new Employee();
+			
+			try(Connection conn= DbUtil.provideConnection()) {
+				
+				PreparedStatement ps=conn.prepareStatement("update employee set EmplPassword=? where Eid=?");
+			    ps.setString(1, Password);
+				ps.setInt(2,Eid);
+				
+				int x=ps.executeUpdate();
+				
+				if(x>0) {
+					message="Password update";
+				}
+				
+			} catch (SQLException e) {
+				
+				message=e.getMessage();
+			}
+			
+			return message;
+		}
+
 }

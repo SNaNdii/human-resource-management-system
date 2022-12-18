@@ -5,18 +5,26 @@ import java.util.Scanner;
 import com.masai.bean.Employee;
 import com.masai.dao.EmployeeDao;
 import com.masai.dao.EmployeeDaoImp;
+import com.masai.exception.EmployeeException;
 
 public class GetEmpByID {
 	
-	public static void main(String[] args) throws SQLException{
+	public static void main(int eid) {
 		
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter Employee Id : ");
-		int eid=sc.nextInt();
 		
 		EmployeeDao dao= new EmployeeDaoImp();
-		Employee employee = new Employee();
-		System.out.println(employee);
+		
+		try {
+			Employee emp = dao.getEmployeeById(eid);
+			System.out.println(emp);
+		} catch (EmployeeException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		
 	}
 }

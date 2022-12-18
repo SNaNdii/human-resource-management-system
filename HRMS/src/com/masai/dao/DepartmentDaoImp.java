@@ -102,6 +102,34 @@ public class DepartmentDaoImp implements DepartmentDao {
 					}
 					return message;
 			}
-	
+
+
+//------------------------------------------ACCEPT   LEAVES----------------------------------------------------
+	@Override
+	public String acceptLeaves(int empId) {
+		String message="Employee Not found !...";
+		try(Connection conn= DbUtil.provideConnection()) {
+			PreparedStatement ps=conn.prepareStatement("update leaves set status='Approve' where empId=?");
+			ps.setInt(1, empId);
+			
+			int x=ps.executeUpdate();
+			
+			if(x>0) {
+				message="Employee leaves Accepted ";
+			}
+		} catch (SQLException e) {
+			message=e.getMessage();
+		}
+		
+		return message;
+	}
+
+
+	//------------------------------------------REJECT   LEAVES----------------------------------------------------
+	@Override
+	public String rejectLeaves(int empId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }

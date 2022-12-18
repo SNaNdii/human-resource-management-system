@@ -3,37 +3,79 @@ package com.masai.application;
 import java.sql.SQLException;
 import java.util.Scanner;
 
+import com.masai.bean.Employee;
+import com.masai.colors.ColorsFile;
 import com.masai.useCase.AddEmployeeUserCase;
+import com.masai.useCase.ChangePassword;
 import com.masai.useCase.GetEmpByID;
+import com.masai.useCase.UpdateEmpProfile;
 
 public class EmployeeLink {
 	
-	public static final String ANSI_YELLOW = "\u001B[33m";
 	public static final String ANSI_RESET = "\u001B[0m";
-	public static final String ANSI_RED = "\u001B[31m";
 	
 	static boolean	ordering=true;
 	
-	public  static void linkingEmployeeMethod() throws SQLException {
+	public  static void linkingEmployeeMethod(Employee  emp) throws SQLException {
 			
 			Scanner sc = new Scanner(System.in);
 			
 				System.out.println();
-				System.out.println(ANSI_RED + "----Thought  of  the  day----" + ANSI_RESET );
-				System.out.println(ANSI_YELLOW + "SUCCESS  IS  NOT  ALWAYS  ABOUOT  GREATNESS,  IT'S  ABOUT  CONSISTENCY");
-				System.out.println("*****************************************************************************************************************" + ANSI_RESET);
+				System.out.println(ColorsFile.BLACK_BOLD_BRIGHT +   "===================================");
+				System.out.println( " ***Welcome  To   My   Employee   Panel***");
+				System.out.println( "===================================" + ANSI_RESET);
 				System.out.println();
-				System.out.println("Press 1 . View Your Profile ");
-				System.out.println();
-				System.out.println("Press 2 . for Update Profile ");
-				System.out.println();
-				System.out.println("Press 3 . Change PassWord");
-				System.out.println("");
-				System.out.println("Press 4 . Apply For Leaves");
-				System.out.println();
+				
+				try {
+					System.out.println(ColorsFile.ORANGE + "                           	                  THOUGHT  OF  THE  DAY" + ANSI_RESET );
+					Thread.sleep(400);
+					System.out.println(ColorsFile.ORANGE + "                                      ************************************************" + ANSI_RESET);
+					System.out.println(ColorsFile.GREEN_ITALIC+ "                               SUCCESS  IS  NOT  ALWAYS  ABOUT  GREATNESS, ");
+					Thread.sleep(400);
+					System.out.println(ColorsFile.GREEN_ITALIC+ "                                                  IT'S  ABOUT  CONSISTENCY");
+					Thread.sleep(400);
+					System.out.println("*****************************************************************************************************************" + ANSI_RESET);
+					Thread.sleep(200);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				
+						try {
+							System.out.println();
+							System.out.println(ColorsFile.RED_ITALIC  +  "               Please Choose Options               "  + ANSI_RESET);
+							Thread.sleep(300);
+							System.out.println();
+							System.out.println(ColorsFile.CYAN_BOLD + "Press 1 . View Your Profile ");
+							Thread.sleep(300);
+							System.out.println();
+							System.out.println("Press 2 . for Update Profile ");
+							Thread.sleep(300);
+							System.out.println();
+							System.out.println("Press 3 . Change PassWord");
+							Thread.sleep(300);
+							System.out.println("");
+							System.out.println("Press 4 . Apply For Leaves"  + ANSI_RESET);
+							Thread.sleep(300);
+							System.out.println();
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 				do {
-				System.out.println("Press 5 . Exit");
-				System.out.println();
+						try {
+							System.out.println(ColorsFile.CYAN_BOLD + "Press 5 . Home  Page");
+							Thread.sleep(300);
+							System.out.println();
+							System.out.println("Press 6 . Exit"  + ANSI_RESET);
+							Thread.sleep(300);
+							System.out.println();
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+				
 				
 				int choice=sc.nextInt();
 				
@@ -42,13 +84,37 @@ public class EmployeeLink {
 				switch (choice) {
 					case 1: {
 						System.out.println();
-						GetEmpByID.main(null);
+						GetEmpByID.main(emp.getEmplId());
 					break;
 					}
-					
+					case 2: {
+					    System.out.println();
+						UpdateEmpProfile.main(emp.getEmplId());
+						break;
+						}
+					case 3: {
+						System.out.println();
+						ChangePassword.main(emp.getEmplId());
+						break;
+						
+					}
 					case 5: {
 						System.out.println();
-						System.out.println("Have  A  Nice  Day !");
+						System.out.println("   Application  Closed");
+						System.out.println("     Home  Page");
+						System.out.println("-------------------------");
+						Main.main(null);
+						ordering=false;
+						break;
+					}
+					case 6: {
+						System.out.println();
+						System.out.println("   Application  Closed");
+						System.out.println("     Exit  to  Employee  Panel");
+						System.out.println();
+						System.out.println(ColorsFile.RED_ITALIC + "     HAVE  A  NICE  DAY"  + ANSI_RESET);
+						System.out.println("-------------------------");
+						EmployeeLink.linkingEmployeeMethod(null);
 						ordering=false;
 						break;
 					}
