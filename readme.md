@@ -21,7 +21,9 @@
         <li>Admin Can Update Employee Details</li>
         <li>Admin Can Transfer Any Employee to Other Department</li>
         <li>Admin Can Approve & Reject Leave</li>
-        <li>--------------------------------------</li>
+    </ol>
+    <p>-----------------------------------------------------</p>
+    <ol>
         <li>Employee Can View Their Profile</li>
         <li>Employee Can Update Their Profile</li>
         <li>Employee Can Apply For Leave</li>
