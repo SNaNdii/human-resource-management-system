@@ -36,7 +36,10 @@
         <li>MySql</li>
         <li>GitHub</li>
     </ol>
-
+    <h3>ER Diagram of HRMS</h3>
+    <hr>
+    <h3>Flow Chart of HRMS</h3>
+    <hr>
 
 </body>
 </html>
