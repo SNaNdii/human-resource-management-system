@@ -15,19 +15,24 @@
     <hr>
     <ol>
         <li>Employee Management</li>
-        <li>Employee Lifecycle</li>
-        <li>Leave and Attendance Management</li>
-        <li>Team Management</li>
-        <li>Hiring</li>
-        <li>Training</li>
-        <li>Payroll</li>
-        <li>Expense Claims and Advances</li>
-        <li>Resource Management</li>
+        <li>Admin Can Add Department</li>
+        <li>Admin Can View All Department</li>
+        <li>Admin Can Update Department Details</li>
+        <li>Admin Can Update Employee Details</li>
+        <li>Admin Can Transfer Any Employee to Other Department</li>
+        <li>Admin Can Approve & Reject Leave</li>
+        <li>--------------------------------------</li>
+        <li>Employee Can View Their Profile</li>
+        <li>Employee Can Update Their Profile</li>
+        <li>Employee Can Apply For Leave</li>
+        <li>Employee Can View Their Profile</li>
     </ol>
     <h3>Language used</h3>
     <hr>
     <ol>
         <li>JAVA</li>
+        <li>MySql</li>
+        <li>GitHub</li>
     </ol>
 
 

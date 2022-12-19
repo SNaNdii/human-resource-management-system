@@ -9,6 +9,7 @@ import com.masai.useCase.AddDepartmentUsecase;
 import com.masai.useCase.AddEmployeeUserCase;
 import com.masai.useCase.UpdateDepartmentUsecase;
 import com.masai.useCase.ViewAllDepartmentUseCase;
+import com.masai.useCase.ViewAllEmployee;
 
 public class AdminLink {
 	
@@ -29,22 +30,25 @@ public class AdminLink {
 				System.out.println(ColorsFile.CYAN_BOLD + "Press 1 --->  For Adding New Departments");
 				Thread.sleep(300);
 				System.out.println();
-				System.out.println("Press 2 --->. view all Department ");
+				System.out.println("Press 2 --->. View all Department ");
 				Thread.sleep(300);
 				System.out.println();
-				System.out.println("Press 3 ---> Update The Department ");
+				System.out.println("Press 3 --->. View all Employee ");
 				Thread.sleep(300);
 				System.out.println();
-				System.out.println("Press 4 ---> For Adding New Employees ");
+				System.out.println("Press 4 ---> Update The Department ");
 				Thread.sleep(300);
 				System.out.println();
-				System.out.println("Press 5 ---> Transfer Employee To Other Department");
+				System.out.println("Press 5 ---> For Adding New Employees ");
 				Thread.sleep(300);
 				System.out.println();
-				System.out.println("Press 6 ---> Accept leaves Of Employess");
+				System.out.println("Press 6 ---> Transfer Employee To Other Department");
 				Thread.sleep(300);
 				System.out.println();
-				System.out.println("Press 7 ---> Reject Leaves Of Employees");
+				System.out.println("Press 7 ---> Accept leaves Of Employess");
+				Thread.sleep(300);
+				System.out.println();
+				System.out.println("Press 8 ---> Reject Leaves Of Employees" + ANSI_RESET);
 				Thread.sleep(300);
 				System.out.println();
 			} catch (InterruptedException e) {
@@ -54,9 +58,10 @@ public class AdminLink {
 			
 			do {
 				try {
-					System.out.println("Press 8 ---> For Home ");
+					System.out.println(ColorsFile.CYAN_BOLD + "Press 9 ---> For Home ");
 					Thread.sleep(300);
-					System.out.println("Press 9 ---> For Exit " + ANSI_RESET);
+					System.out.println();
+					System.out.println("Press 10 ---> For Exit " + ANSI_RESET);
 					Thread.sleep(300);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
@@ -78,23 +83,28 @@ public class AdminLink {
 							break;
 					}
 					case 3: {
+						System.out.println();
+						ViewAllEmployee.main(null);
+						break;
+				}
+					case 4: {
 							System.out.println();
 							UpdateDepartmentUsecase.main(null);
 							break;
 					}
-					case 4: {
+					case 5: {
 						System.out.println();
 						AddEmployeeUserCase.main(null);
 						break;
 					}
 					
-					case 6: {
+					case 7: {
 						System.out.println();
 						AcceptLeave.main(null);
 						break;
 					}
 					
-					case 8: {
+					case 9: {
 						System.out.println();
 						System.out.println("   Application  Closed");
 						System.out.println("     Home  Page");
@@ -103,7 +113,7 @@ public class AdminLink {
 						ordering=false;
 						break;
 					}
-					case 9: {
+					case 10: {
 						System.out.println();
 						System.out.println("   Application  Closed");
 						System.out.println("     Exit  to  Admin  Panel");

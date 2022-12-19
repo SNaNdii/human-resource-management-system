@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.masai.bean.Employee;
 import com.masai.exception.EmployeeException;
@@ -141,5 +143,34 @@ public class EmployeeDaoImp implements EmployeeDao {
 			
 			return message;
 		}
+
+
+	
+	//---------------------------------GET   ALL   EMPLOYEE----------------------------------------------------	
+	@Override
+	public List<Employee> getAllEmployee() throws EmployeeException {
+		List<Employee> emp=new ArrayList();
+		
+		try(Connection con = DbUtil.provideConnection()) {
+			PreparedStatement ps = con.prepareStatement("select * from employee");
+			ResultSet rs=ps.executeQuery();
+			
+			while(rs.next()) {
+				Employee e= new Employee();
+				 e.setEmplId(rs.getInt("Eid"));
+	        	 e.setEmplName(rs.getString("EmplName"));
+	        	 e.setEmplUserName(rs.getString("EmplUserName"));
+				 e.setEmplPassword(rs.getString("EmplPassword"));
+				 e.setEdid(rs.getInt("Edid"));
+				 
+				 emp.add(e);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return emp;
+	}
 
 }
