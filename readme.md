@@ -38,11 +38,9 @@
     </ol>
     
     ## ER Diagram of HRMS
-    ![Screenshot_20221214_012141](https://user-images.githubusercontent.com/108002752/222922202-81d92808-5b11-4cbd-a6c8-82d716cca544.png)
 
     
     ## Flow Chart of HRMS
-    ![Screenshot_20221214_122927](https://user-images.githubusercontent.com/108002752/222922189-0249ebd9-5249-4f54-bd68-aa8e6cd57eba.png)
     
 
 </body>
