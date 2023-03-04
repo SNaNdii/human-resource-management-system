@@ -38,7 +38,8 @@
     </ol>
     
    <h3>Flow Chart and ER-diagram of HRMS</h3>
-    <img src="" >
+    <img src="https://user-images.githubusercontent.com/108002752/222922711-cd50eb44-a694-49ad-a612-3309b256fccc.png" >
+    <img src="https://user-images.githubusercontent.com/108002752/222922719-da8183c3-f5e1-4818-bb82-ef7a85721091.png" >
 
 </body>
 </html>
