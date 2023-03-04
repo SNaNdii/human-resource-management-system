@@ -37,11 +37,11 @@
         <li>GitHub</li>
     </ol>
     
-    ## ER Diagram of HRMS
-
+    <h3>ER Diagram of HRMS</h3>
+    <img src="" >
     
-    ## Flow Chart of HRMS
-    
+   <h3>Flow Chart of HRMS</h3>
+    <img src="" >
 
 </body>
 </html>
